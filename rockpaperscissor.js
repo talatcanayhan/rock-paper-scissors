@@ -30,4 +30,24 @@ function playRound (playerSelection, computerSelection) {
         return "Player wins";}
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+function game() {
+    var numOfRounds = 5;
+    var playerScore = 0;
+    var computerScore  = 0;
+    while (numOfRounds != 0) {
+        var result = playRound(getPlayerChoice(),getComputerChoice());
+        if (result == "Player wins")
+            playerScore++;
+        else if (result == "Computer wins")
+            computerScore++;
+
+        console.log(result);
+        numOfRounds--;
+    }
+
+    console.log("Player score: " + playerScore + "\n"
+                + "Computer score: " + computerScore 
+    );
+}
+
+game();
